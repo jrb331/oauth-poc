@@ -7,13 +7,19 @@ provider:
   name: aws
   runtime: nodejs18.x
 
-functions:
-  api:
-    handler: index.handler
-    events:
-      - httpApi:
-          path: /
-          method: get
-
 plugins:
   - serverless-offline
+
+functions:
+  api:
+    handler: handlers/index.handler
+    events:
+      - http:
+          path: /
+          method: get
+  authorize:
+    handler: handlers/authorize.authorize
+    events:
+      - http:
+          path: authorize
+          method: get
