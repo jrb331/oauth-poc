@@ -5,7 +5,7 @@ exports.authorize = async (event) => {
     response = await axios.post('<placeholder>/oauth2/default/v1/token', 'grant_type=client_credentials&scope=testScope', {
       headers: {
           'accept': 'application/json',
-          'authorization': 'Basic ' + event.headers.authorization,
+          'authorization': 'Basic ' + event.headers.Authorization,
           'cache-control': 'no-cache',
           'content-type': 'application/x-www-form-urlencoded'
       },
