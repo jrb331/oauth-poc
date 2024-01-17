@@ -24,7 +24,7 @@ exports.authorize = async (event) => {
   } catch (error) {
     console.error(error);
     return {
-        statusCode: 403,
+        statusCode: 401,
         body: JSON.stringify(
             {
                 message: "Access Denied",
